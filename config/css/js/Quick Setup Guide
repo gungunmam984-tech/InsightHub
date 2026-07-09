@@ -1,0 +1,21 @@
+# Step 1 — Clone / Copy files to your server
+# Step 2 — Run SQL in phpMyAdmin
+
+CREATE DATABASE single_blog;
+USE single_blog;
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    content TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE admin (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(100),
+    password VARCHAR(100)
+);
+INSERT INTO admin (username, password) VALUES ('admin', '12345');
+
+# Step 3 — Open in browser
+http://localhost/single_blog/
+http://localhost/single_blog/login.php   # Admin: admin / 12345
